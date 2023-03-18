@@ -1,6 +1,9 @@
+let opt1 = "Rock";
+let opt2 = "Paper";
+let opt3 = "Scissors";
+
 function getComputerChoice(){
-    let options = ["Rock", "Paper", "Scissors"];
-    
+    let options = [opt1, opt2, opt3];
     //Selects number for array
     let compselectionindex = Math.floor(Math.random() * 3);
     let compselection = options[compselectionindex];
@@ -14,7 +17,7 @@ function getPlayerChoice(){
     // Convert Player choice into either "Rock", "Paper", or "Scissors"
     convertedchoice = playerchoice[0].toUpperCase() + playerchoice.slice(1);
     // Confirm Choice is Rock, Paper, or Scissors
-    if (convertedchoice == "Scissors" || convertedchoice == "Paper" || convertedchoice == "Rock"){
+    if (convertedchoice == opt3 || convertedchoice == opt2|| convertedchoice == opt1){
         return convertedchoice;
     }
     else{
@@ -27,10 +30,6 @@ function playRound(playerSelection,computerSelection){
     computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice();
     console.log("Computer Selects " + computerSelection + "!")
-
-    let opt1 = "Rock"
-    let opt2 = "Paper"
-    let opt3 = "Scissors"
 
     switch (true){
         //Case with player selecting rock
@@ -66,11 +65,4 @@ function playRound(playerSelection,computerSelection){
 
     }
 
-
-
     }
-
-
-
-      // If Player Selection is Paper
-    // If Player Selection is Scissors
