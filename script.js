@@ -18,13 +18,59 @@ function getPlayerChoice(){
         return convertedchoice;
     }
     else{
-        console.log("Bad Selection!") 
         getPlayerChoice();
     }
-    // If not, reask for Player Choice, if correct store and return selection
-
 }
 
 function playRound(playerSelection,computerSelection){
     // CODE
-}
+    computerSelection = getComputerChoice();
+    playerSelection = getPlayerChoice();
+    console.log("Computer Selects " + computerSelection + "!")
+
+    let opt1 = "Rock"
+    let opt2 = "Paper"
+    let opt3 = "Scissors"
+
+    switch (true){
+        //Case with player selecting rock
+        case ((computerSelection == opt1 && playerSelection == opt1)):
+            console.log("Tie!");
+            break;
+        case ((computerSelection == opt3 && playerSelection == opt1)):
+            console.log("Player Wins!");
+            break;
+        case ((computerSelection == opt2 && playerSelection == opt1)):
+            console.log("Computer Wins!");
+            break;
+        //Cases with player selecting scissors
+        case ((computerSelection == opt1 && playerSelection == opt3)):
+            console.log("Computer Wins!");
+            break;
+        case ((computerSelection == opt3 && playerSelection == opt3)):
+            console.log("Tie!");
+            break;
+        case ((computerSelection == opt2 && playerSelection == opt3)):
+            console.log("Player Wins!");
+            break;
+        //Cases with player selecting paper
+        case ((computerSelection == opt1 && playerSelection == opt2)):
+            console.log("Player Wins!");
+            break;
+        case ((computerSelection == opt3 && playerSelection == opt2)):
+            console.log("Computer Wins!");
+            break;
+        case ((computerSelection == opt2 && playerSelection == opt2)):
+            console.log("Tie!");
+            break;
+
+    }
+
+
+
+    }
+
+
+
+      // If Player Selection is Paper
+    // If Player Selection is Scissors
