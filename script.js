@@ -75,6 +75,7 @@ function playRound(playerSelection,computerSelection){
     }
     console.log("Wins by player: " + wins_by_player);
     console.log("Wins by computer: " + wins_by_computer);
+
 }
 
 function game(){
@@ -90,4 +91,9 @@ function game(){
         }
 
     }
+    wins_by_computer = 0;
+    wins_by_player = 0;
 }
+
+
+document.getElementById("wins_player").innerHTML = wins_by_player;
