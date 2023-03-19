@@ -1,0 +1,84 @@
+.containerA{
+    display: flex;
+    flex-direction: column;
+   
+    background-color: rgba(210, 210, 210, 0.434);
+    border-bottom: 1px solid white;
+    min-height: 25%;
+}
+
+body{
+    background-image: url(Images/stoogesgif1.gif);
+    background-size: cover;
+    background-repeat: no-repeat;
+   
+}
+.containerB{
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+}
+.topheaderimage{
+    background-image: url(Images/Stoogelogo.png);
+    background-size: cover;
+    
+    min-height: 112.5px;
+    min-width: 225px;
+    padding:4px;
+    margin:4px
+   
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgb(235, 235, 235);
+    margin: 0;
+
+}
+
+.topheader{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 16px;
+    margin-right: 16px;
+ 
+}
+
+
+
+.topheadermiddle{
+    display: flex;
+    flex: 2,1,auto;
+    flex-direction: column;
+    margin-left: 16px;
+    margin-right: 16px;
+
+    
+}
+
+a,b{
+    font-family: stooges, 'Times New Roman', Times, serif;
+    padding: 2px;
+    color: white;
+    text-align: center;
+    
+}
+
+a{
+    font-size: 36px;
+
+}
+b{
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+
+@font-face {
+    font-family: stooges;
+    src: url(Fonts/TheThreeStoogesFont.ttf);
+}
