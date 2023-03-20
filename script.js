@@ -13,9 +13,12 @@ function getComputerChoice(){
     return compselection;
 }
 
-function getPlayerChoice(){
-    //Get Player Choice through textbox
-    let playerchoice = prompt("Rock, Paper or Scissors!", "Rock");
+
+function getPlayerChoice_TEXT(playerchoice){
+    //Get Player Choice 
+    //Force user to click an option
+  
+
 
     // Convert Player choice into either "Rock", "Paper", or "Scissors"
     convertedchoice = playerchoice[0].toUpperCase() + playerchoice.slice(1);
@@ -28,10 +31,10 @@ function getPlayerChoice(){
     }
 }
 
-function playRound(playerSelection,computerSelection){
+function playRound(playerSelection=get,computerSelection){
     // CODE
     computerSelection = getComputerChoice();
-    playerSelection = getPlayerChoice();
+    playerSelection = getPlayerChoice_TEXT();
     console.log("Computer Selects " + computerSelection + "!");
 
     switch (true){
@@ -78,8 +81,30 @@ function playRound(playerSelection,computerSelection){
 
 }
 
+
+function confirmclick(){
+    // if paper clicked
+    if(document.getElementById('button_opt_1').clicked == true){
+        alert("button was clicked");
+        console.log("Mo clicked");
+    }
+    // if rock clicked
+    // if scissors clicked
+
+    // return
+    // Confirm Choice is Rock, Paper, or Scissors
+    //  if (clickedchoice == opt3 || clickedchoice == opt2|| clickedchoice == opt1){
+    //     return convertedchoice;
+    // }
+    // else{
+    //     getPlayerChoice();
+    // }
+}
+
+
 function game(){
     // Want to call the play round function
+
     // Until either computer or player reaches 5 wins
     while ( wins_by_computer < 5 && wins_by_player < 5){
         playRound();
@@ -97,3 +122,13 @@ function game(){
 
 
 document.getElementById("wins_player").innerHTML = wins_by_player;
+
+
+
+let count = 0;
+var output = document.getElementById('outputA');
+
+function optionClick(input){
+    console.log("The value of input is: " + input);
+    return input;
+}

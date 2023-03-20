@@ -22,11 +22,22 @@ body{
     background-image: url(Images/Stoogelogo.png);
     background-size: cover;
     
-    min-height: 112.5px;
-    min-width: 225px;
+    min-height: 100px;
+    min-width: 200px;
     padding:4px;
     margin:4px
    
+}
+.characterscontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.characternames{
+    background-color: black;
+    border: 1px solid white;
+
 }
 
 body{
@@ -76,6 +87,89 @@ b{
     font-size: 18px;
     letter-spacing: 2px;
 }
+
+button{
+    background-color: rgb(119, 118, 118);
+    width: 250px;
+    height: 250px;
+    margin:16px;
+    border: 1px solid white;
+}
+
+.button_Option_1{
+    background-image: url(Images/Moe1.gif);
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+.button_Option_1:hover{
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 4px 4px 4px 4px rgba(245, 244, 245, 0.2);
+}
+.button_Option_1:active{
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid rgb(187, 118, 252);
+    box-shadow: 4px 4px 4px 4px rgba(81, 0, 181, 0.2);
+}
+
+
+
+
+.button_Option_2{
+    background-image: url(Images/Larry_1.gif);
+    background-position: 70% 20%;
+    background-size: cover;
+    cursor: pointer;
+}
+.button_Option_2:hover{
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 4px 4px 4px 4px rgba(245, 244, 245, 0.2);
+}
+.button_Option_2:active{
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid rgb(187, 118, 252);
+    box-shadow: 4px 4px 4px 4px rgba(81, 0, 181, 0.2);
+}
+
+
+
+.button_Option_3{
+    background-image: url(Images/Curly.gif);
+    background-position: 50% 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.button_Option_3:hover{
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid white;
+    box-shadow: 4px 4px 4px 4px rgba(245, 244, 245, 0.2);
+}
+.button_Option_3:active{
+    background-size: cover;
+    cursor: pointer;
+    border: 3px solid rgb(187, 118, 252);
+    box-shadow: 4px 4px 4px 4px rgba(81, 0, 181, 0.2);
+}
+
+
+
+
+
+
+
+.buttonnb{
+    background-image: url(Images/stooge1.png);
+    background-size: contain;
+}
+
 
 
 
