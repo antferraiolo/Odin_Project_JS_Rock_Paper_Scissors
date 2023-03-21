@@ -21,24 +21,41 @@
             <div class="topheaderimage"></div>
         </div>
     </div>
-    <div class="containerB">
-        <c> PLAYER SCORE: <td id="wins_player"> 0</td> </c>
-        <c> COMPUTER SCORE: </c>
-    </div>
+    
+
     <script type="module">
         import {optionClick} from "./script.js"
     </script>
-    <div> 
-        <div class="characterscontainer">
-            <button onclick="optionClick('Rock')" class="button_Option_1" id="button_opt_1"></button>
-            <button onclick="optionClick('Paper')" class="button_Option_2" id="button_opt_2"></button>
-            <button onclick="optionClick('Scissors')"class="button_Option_3" id="button_opt_3"></button>
 
+    <button class="button_Option_4" >PLAY THE GAME?</button>
+
+    <div class="charactersandnamecontainer"> 
+        <div class="individual_characterandnamecontainer">
+            <button onclick="optionClick('Rock')" class="button_Option_1" id="button_opt_1"></button>
+            <a class="charactername">MO</a>
+        </div>
+        <div class="individual_characterandnamecontainer">
+            <button onclick="optionClick('Paper')" class="button_Option_2" id="button_opt_2"></button>
+            <a class="charactername">Larry</a>
+        </div>
+        <div class="individual_characterandnamecontainer">
+            <button onclick="optionClick('Scissors')" class="button_Option_3" id="button_opt_3"></button>
+            <a class="charactername">Curly</a>
         </div>
     </div>
 
-
-    
-    
+    <div class="scoreboard"> 
+        <div class="scoreboard_score">
+            <div class="individual_characterandnamecontainer">
+                <c class="scorebox">02</c>
+                 <a class="charactername">PLAYER</a>
+            </div>
+            <div class="individual_characterandnamecontainer">
+                <c class="scorebox">02</c>
+                <a class="charactername">COMPUTER</a>
+            </div>
+        </div>
+        <a class="winnerbox">COMPUTER WINS</a>
+    </div>
 </body>
 </html>
