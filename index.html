@@ -22,13 +22,9 @@
         </div>
     </div>
     
-
-    <script type="module">
-        import {optionClick} from "./script.js"
-    </script>
-
-    <button class="button_Option_4" >PLAY THE GAME?</button>
-
+    <button onclick = "playgameclicked()" class="button_Option_4" id="button_Option_4">PLAY THE GAME?</button>
+    <div class="toptextbox" id="topbox"></div>
+    
     <div class="charactersandnamecontainer"> 
         <div class="individual_characterandnamecontainer">
             <button onclick="optionClick('Rock')" class="button_Option_1" id="button_opt_1"></button>
@@ -58,4 +54,5 @@
         <a class="winnerbox">COMPUTER WINS</a>
     </div>
 </body>
+
 </html>

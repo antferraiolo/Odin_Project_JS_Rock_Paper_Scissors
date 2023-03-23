@@ -3,35 +3,37 @@ let opt2 = "Paper";
 let opt3 = "Scissors";
 let wins_by_player = 0; 
 let wins_by_computer = 0;
+playerchoice = "nothing";
 
 
-function getComputerChoice(){
-    let options = [opt1, opt2, opt3];
-    //Selects number for array
-    let compselectionindex = Math.floor(Math.random() * 3);
-    let compselection = options[compselectionindex];
-    return compselection;
+function playgameclicked(){
+    console.log("Time to play the game");
+    game();
 }
 
 
-function getPlayerChoice_TEXT(playerchoice){
-    //Get Player Choice 
-    //Force user to click an option
-  
+function game(){
+    // Want to call the play round function
+    console.log("GAME IS STARTED!");
+    
+    // Until either computer or player reaches 5 wins
+    while ( wins_by_computer < 5 && wins_by_player < 5){
+        playRound();
+        if(wins_by_computer == 5){
+            console.log("Computer wins the game!")
+        }
+        else{
+            console.log("Player wins the game!")
+        }
 
+    }
+    wins_by_computer = 0;
+    wins_by_player = 0;
 
-    // Convert Player choice into either "Rock", "Paper", or "Scissors"
-    convertedchoice = playerchoice[0].toUpperCase() + playerchoice.slice(1);
-    // Confirm Choice is Rock, Paper, or Scissors
-    if (convertedchoice == opt3 || convertedchoice == opt2|| convertedchoice == opt1){
-        return convertedchoice;
-    }
-    else{
-        getPlayerChoice();
-    }
+document.getElementById("wins_player").innerHTML = wins_by_player;
 }
 
-function playRound(playerSelection=get,computerSelection){
+function playRound(playerSelection,computerSelection){
     // CODE
     computerSelection = getComputerChoice();
     playerSelection = getPlayerChoice_TEXT();
@@ -82,53 +84,71 @@ function playRound(playerSelection=get,computerSelection){
 }
 
 
-function confirmclick(){
-    // if paper clicked
-    if(document.getElementById('button_opt_1').clicked == true){
-        alert("button was clicked");
-        console.log("Mo clicked");
-    }
-    // if rock clicked
-    // if scissors clicked
 
-    // return
+
+
+
+function getComputerChoice() {
+    let options = [opt1, opt2, opt3];
+    //Selects number for array
+    let compselectionindex = Math.floor(Math.random() * 3);
+    let compselection = options[compselectionindex];
+    console.log(compselection);
+    return compselection;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getPlayerChoice_TEXT() {
+    //Get Player Choice 
+    //Force user to click an option
+  
+    convertedchoice = optionClick();
+
+    // Convert Player choice into either "Rock", "Paper", or "Scissors"
+    convertedchoice = playerchoice[0].toUpperCase() + playerchoice.slice(1);
     // Confirm Choice is Rock, Paper, or Scissors
-    //  if (clickedchoice == opt3 || clickedchoice == opt2|| clickedchoice == opt1){
-    //     return convertedchoice;
-    // }
-    // else{
-    //     getPlayerChoice();
-    // }
-}
-
-
-function game(){
-    // Want to call the play round function
-
-    // Until either computer or player reaches 5 wins
-    while ( wins_by_computer < 5 && wins_by_player < 5){
-        playRound();
-        if(wins_by_computer == 5){
-            console.log("Computer wins the game!")
-        }
-        else{
-            console.log("Player wins the game!")
-        }
-
+    if (convertedchoice == opt3 || convertedchoice == opt2|| convertedchoice == opt1){
+        return convertedchoice;
     }
-    wins_by_computer = 0;
-    wins_by_player = 0;
+    else{
+        getPlayerChoice();
+    }
 }
 
 
-document.getElementById("wins_player").innerHTML = wins_by_player;
+
+
+
+function optionClick(){
+    console.log("inoptionclick function");
+    document.getElementById("topbox").innerHTML = "Pick a player!";
+   
+
+
+
+    console.log("The value of input is: " + input);
+    return input;
+}
+
+
+
+
+
 
 
 
 let count = 0;
 var output = document.getElementById('outputA');
 
-function optionClick(input){
-    console.log("The value of input is: " + input);
-    return input;
-}

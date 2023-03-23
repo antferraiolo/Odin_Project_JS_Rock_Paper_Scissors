@@ -34,8 +34,8 @@ body{
     justify-content: center;
     flex-wrap: wrap;
     gap:24px;
-    padding: 16px;
-    margin:16px;
+    padding-bottom: 24px;
+    margin:8px;
 }
 
 .individual_characterandnamecontainer{
@@ -314,4 +314,31 @@ button{
 @font-face {
     font-family: stooges;
     src: url(Fonts/TheThreeStoogesFont.ttf);
+}
+
+.toptextbox{
+display:flex;
+justify-content: center;
+flex:auto;
+width: 82.5%;
+height: 64px;
+align-items: center;
+
+
+
+padding:4px;
+
+border: 1px solid white;
+
+margin-top: 24px;
+
+background-size: cover;
+
+align-self: center;
+background-color: black;
+color: rgb(255, 255, 255);
+
+font-size: 36px;
+letter-spacing: 2px;
+font-family: stooges, 'Times New Roman', Times, serif;
 }
