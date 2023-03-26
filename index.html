@@ -22,20 +22,18 @@
         </div>
     </div>
     
-    <button onclick = "playgameclicked()" class="button_Option_4" id="button_Option_4">PLAY THE GAME?</button>
-    <div class="toptextbox" id="topbox"></div>
     
     <div class="charactersandnamecontainer"> 
         <div class="individual_characterandnamecontainer">
-            <button onclick="optionClick('Rock')" class="button_Option_1" id="button_opt_1"></button>
+            <button onclick="moe()" class="button_Option_1" id="button_opt_1"></button>
             <a class="charactername">MO</a>
         </div>
         <div class="individual_characterandnamecontainer">
-            <button onclick="optionClick('Paper')" class="button_Option_2" id="button_opt_2"></button>
+            <button onclick="larry()" class="button_Option_2" id="button_opt_2"></button>
             <a class="charactername">Larry</a>
         </div>
         <div class="individual_characterandnamecontainer">
-            <button onclick="optionClick('Scissors')" class="button_Option_3" id="button_opt_3"></button>
+            <button onclick="curly()"class="button_Option_3" id="button_opt_3"></button>
             <a class="charactername">Curly</a>
         </div>
     </div>
@@ -43,16 +41,19 @@
     <div class="scoreboard"> 
         <div class="scoreboard_score">
             <div class="individual_characterandnamecontainer">
-                <c class="scorebox">02</c>
+                <c class="scorebox" id ="numberOfPlayerWins">00</c>
                  <a class="charactername">PLAYER</a>
             </div>
             <div class="individual_characterandnamecontainer">
-                <c class="scorebox">02</c>
+                <c class="scorebox" id ="numberOfComputerWins">00</c>
                 <a class="charactername">COMPUTER</a>
             </div>
         </div>
-        <a class="winnerbox">COMPUTER WINS</a>
+        <a class="winnerbox" id="winnerbox"></a>
+        <a class="winnerbox" id="winnerbox2">IN GAME MESSAGE</a>
+        <button onclick = "playgameclicked()" class="button_Option_4" id="button_Option_4">Reset Game?</button>
     </div>
+    
 </body>
 
 </html>

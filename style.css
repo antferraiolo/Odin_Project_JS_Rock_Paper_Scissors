@@ -35,7 +35,7 @@ body{
     flex-wrap: wrap;
     gap:24px;
     padding-bottom: 24px;
-    margin:8px;
+    margin:16px;
 }
 
 .individual_characterandnamecontainer{
@@ -258,22 +258,22 @@ button{
     display: flex;
     justify-content: center;
     flex:auto;
-    width: 85%;
+    width: 550px;
     
     
     
-    padding:16px;
+    padding:8px;
     
     border: 1px solid white;
     
-    margin-top: 36px;
+    margin-top: 0px;
     background-size: cover;
     cursor: pointer;
     align-self: center;
     background-color: black;
     color: rgb(255, 255, 255);
     
-    font-size: 36px;
+    font-size: 24px;
     letter-spacing: 2px;
     font-family: stooges, 'Times New Roman', Times, serif;
     
@@ -285,14 +285,14 @@ button{
 .button_Option_4:hover{
     background-size: cover;
     cursor: pointer;
-    color: rgb(71, 255, 74);;
-    border: 3px solid rgb(71, 255, 74);
+    color: rgb(255, 71, 71);;
+    border: 3px solid rgb(255, 71, 71);
     box-shadow: 4px 4px 4px 4px rgba(245, 244, 245, 0.2);
 }
 .button_Option_4:active{
     background-size: cover;
     cursor: pointer;
-    border: 3px solid rgb(71, 255, 74);
+    border: 3px solid rgb(255, 71, 71);
     box-shadow: 4px 4px 4px 4px rgba(0, 156, 21, 0.2);
 }
 
@@ -320,7 +320,7 @@ button{
 display:flex;
 justify-content: center;
 flex:auto;
-width: 82.5%;
+width: 70%;
 height: 64px;
 align-items: center;
 

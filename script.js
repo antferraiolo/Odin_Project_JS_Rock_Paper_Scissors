@@ -3,89 +3,148 @@ let opt2 = "Paper";
 let opt3 = "Scissors";
 let wins_by_player = 0; 
 let wins_by_computer = 0;
-playerchoice = "nothing";
+let playerchoice = "nothing";
+let playinggame = false;
+let wasplayerchoicemade = false;
+
+function moe(){
+    playerchoice = opt1;
+    console.log("moe");
+    wasplayerchoicemade = true;
+    playerchoiceconfirmation();
+}
+function larry(){
+    playerchoice = opt2;
+    console.log("larry");
+    wasplayerchoicemade = true;
+    playerchoiceconfirmation();
+}
+function curly(){
+    playerchoice = opt3;
+    console.log("curly");
+    wasplayerchoicemade = true;
+    playerchoiceconfirmation();
+}
+
+function playerchoiceconfirmation(){
+    if (wasplayerchoicemade == true){
+        console.log("start");
+        playRound();
+    }
+}
+
 
 
 function playgameclicked(){
-    console.log("Time to play the game");
-    game();
-}
-
-
-function game(){
-    // Want to call the play round function
-    console.log("GAME IS STARTED!");
-    
-    // Until either computer or player reaches 5 wins
-    while ( wins_by_computer < 5 && wins_by_player < 5){
-        playRound();
-        if(wins_by_computer == 5){
-            console.log("Computer wins the game!")
-        }
-        else{
-            console.log("Player wins the game!")
-        }
-
-    }
+    wins_by_player = 0; 
     wins_by_computer = 0;
-    wins_by_player = 0;
-
-document.getElementById("wins_player").innerHTML = wins_by_player;
+    document.getElementById("numberOfPlayerWins").innerHTML = "0"+wins_by_player;
+    document.getElementById("numberOfComputerWins").innerHTML = "0"+wins_by_computer;
+    document.getElementById("winnerbox").innerHTML = "";
+    document.getElementById("winnerbox2").innerHTML = "";
 }
+
+
 
 function playRound(playerSelection,computerSelection){
-    // CODE
+    // GET COMPUTER SELECTION
     computerSelection = getComputerChoice();
-    playerSelection = getPlayerChoice_TEXT();
+   
+    playerSelection = playerchoice;
+    // TEXT TO SEE COMPUTER SELECTION
     console.log("Computer Selects " + computerSelection + "!");
+    console.log("Player Selects " + playerSelection + "!");
 
     switch (true){
         //Case with player selecting rock
         case ((computerSelection == opt1 && playerSelection == opt1)):
             console.log("Tie!");
+            document.getElementById("winnerbox").innerHTML = "Tie!";
+            document.getElementById("winnerbox2").innerHTML = "Try harder!";
             break;
         case ((computerSelection == opt3 && playerSelection == opt1)):
             console.log("Player Wins!");
+            document.getElementById("winnerbox").innerHTML = "Player Wins Round!";
+            document.getElementById("winnerbox2").innerHTML = "Woo!";
             wins_by_player++;
             break;
         case ((computerSelection == opt2 && playerSelection == opt1)):
             console.log("Computer Wins!");
+            document.getElementById("winnerbox").innerHTML = "Computer Wins Round!";
+            document.getElementById("winnerbox2").innerHTML = "Boo!";
             wins_by_computer++;
             break;
         //Cases with player selecting scissors
         case ((computerSelection == opt1 && playerSelection == opt3)):
             console.log("Computer Wins!");
+            document.getElementById("winnerbox").innerHTML = "Computer Wins Round!";
+            document.getElementById("winnerbox2").innerHTML = "Boo!";
             wins_by_computer++;
             break;
         case ((computerSelection == opt3 && playerSelection == opt3)):
             console.log("Tie!");
+            document.getElementById("winnerbox").innerHTML = "Tie!";
+            document.getElementById("winnerbox2").innerHTML = "Try harder!";
             break;
         case ((computerSelection == opt2 && playerSelection == opt3)):
             console.log("Player Wins!");
+            document.getElementById("winnerbox").innerHTML = "Player Wins Round!";
+            document.getElementById("winnerbox2").innerHTML = "Woo!";
             wins_by_player++;
             break;
         //Cases with player selecting paper
         case ((computerSelection == opt1 && playerSelection == opt2)):
             console.log("Player Wins!");
+            document.getElementById("winnerbox").innerHTML = "Player Wins Round!";
+            document.getElementById("winnerbox2").innerHTML = "Woo!";
             wins_by_player++;
             break;
         case ((computerSelection == opt3 && playerSelection == opt2)):
             console.log("Computer Wins!");
+            document.getElementById("winnerbox").innerHTML = "Computer Wins Round!";
+            document.getElementById("winnerbox2").innerHTML = "Boo!";
             wins_by_computer++;
             break;
         case ((computerSelection == opt2 && playerSelection == opt2)):
             console.log("Tie!");
+            document.getElementById("winnerbox").innerHTML = "Tie!";
+            document.getElementById("winnerbox2").innerHTML = "Try harder!";
             break;
-
     }
+    // Reset was player selection made
+    wasplayerchoicemade = false;
+    playerchoice = "nothing";
+
+    // Console log the wins by player and computer
     console.log("Wins by player: " + wins_by_player);
     console.log("Wins by computer: " + wins_by_computer);
 
+    document.getElementById("numberOfPlayerWins").innerHTML = "0"+wins_by_player;
+    document.getElementById("numberOfComputerWins").innerHTML = "0"+wins_by_computer;
+    // is game over function
+    gameStatus(wins_by_computer,wins_by_player);
+    
 }
 
 
+function gameStatus(wins_by_computer,wins_by_player){
+    if(wins_by_computer == 5){
+        console.log("Computer wins the Game!");
+        document.getElementById("winnerbox").innerHTML = "Computer Wins the Game!";
+        document.getElementById("winnerbox2").innerHTML = "Better Luck!";
+        setTimeout(playgameclicked(),10000);
+    }
+    else if(wins_by_player == 5){
+        console.log("Player wins the Game!");
+        document.getElementById("winnerbox").innerHTML = "Player Wins the Game!";
+        document.getElementById("winnerbox2").innerHTML = "What a hit!";
+        setTimeout(playgameclicked(),10000);
+    }
+    else{
+        console.log("Continue!");
+    }
 
-
+};
 
 
 function getComputerChoice() {
@@ -97,58 +156,5 @@ function getComputerChoice() {
     return compselection;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-function getPlayerChoice_TEXT() {
-    //Get Player Choice 
-    //Force user to click an option
-  
-    convertedchoice = optionClick();
-
-    // Convert Player choice into either "Rock", "Paper", or "Scissors"
-    convertedchoice = playerchoice[0].toUpperCase() + playerchoice.slice(1);
-    // Confirm Choice is Rock, Paper, or Scissors
-    if (convertedchoice == opt3 || convertedchoice == opt2|| convertedchoice == opt1){
-        return convertedchoice;
-    }
-    else{
-        getPlayerChoice();
-    }
-}
-
-
-
-
-
-function optionClick(){
-    console.log("inoptionclick function");
-    document.getElementById("topbox").innerHTML = "Pick a player!";
-   
-
-
-
-    console.log("The value of input is: " + input);
-    return input;
-}
-
-
-
-
-
-
-
-
-let count = 0;
-var output = document.getElementById('outputA');
-
+// document.getElementById("numberOfPlayerWins").innerHTML = wins_by_player ;
+// document.getElementById("numberOfComputerWins").innerHTML = wins_by_computer ;
